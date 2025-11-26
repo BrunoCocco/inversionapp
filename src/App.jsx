@@ -1,9 +1,11 @@
+import Header from './components/Header'
 import "./App.css";
 
 function App() {
   return (
     <>
-      <h2>Hola</h2>
+    <Header />
+    <Botones/>
     </>
   );
 }
