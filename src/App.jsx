@@ -1,25 +1,23 @@
-import Header from './components/Header';
-import Botones from './components/Botones';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import Header from "./components/Header";
+import Botones from "./components/Botones";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 import "./App.css";
-import { useState } from 'react';
+import { useState } from "react";
 
 function App() {
   const [vista, setVista] = useState("productos");
+ 
 
   return (
     <>
+      <Header />
 
-    <Header />
-    
-    <Botones  setVista={setVista} />
+      <Botones setVista={setVista} />
 
-    <Main vista={vista} setVista={setVista} />
+      <Main vista={vista} setVista={setVista}  />
 
-
-    <Footer/>
-
+      <Footer />
     </>
   );
 }

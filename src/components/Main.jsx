@@ -6,6 +6,7 @@ import Cartera from '../layouts/Cartera.jsx'
 function Main({ vista }) {
   return (
     <>
+    
       {vista === "productos" && <Productos />}
       {vista === "inversion" && <Inversion />}
       {vista === "cartera" && <Cartera />}
