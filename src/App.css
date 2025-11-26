@@ -1,15 +1,11 @@
 /* ============================================================
    🎨 VARIABLES GLOBALES
-   */
+   ============================================================ */
 :root {
   --color-primario: #1e3a8a;
-  /* azul principal */
   --color-secundario: #3b82f6;
-  /* azul claro */
   --color-fondo: #f3f4f6;
-  /* gris muy claro */
   --color-texto: #1f2937;
-  /* gris oscuro */
   --color-blanco: #ffffff;
   --color-borde: #d1d5db;
 
@@ -20,7 +16,7 @@
 
 /* ============================================================
    🧱 RESETEO Y BASE
-    */
+   ============================================================ */
 * {
   margin: 0;
   padding: 0;
@@ -43,31 +39,30 @@ body {
 
 /* ============================================================
    🧭 ESTRUCTURA GENERAL
-   */
-
+   ============================================================ */
 main {
   width: 100%;
   max-width: var(--ancho-max);
   padding: 2rem;
+  padding-top: 6rem; /* 🔹 deja espacio para header + botonera */
 }
 
 /* ============================================================
    🔷 HEADER – CrowInversor
-    */
+   ============================================================ */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 3rem;
-  /* altura aprox. 3 cm */
   background-color: var(--color-blanco);
   color: var(--color-primario);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  z-index: 1000;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06); /* 🔹 sombra más sutil */
+  z-index: 1001; /* 🔹 sobre la botonera */
 }
 
 .header__content {
@@ -88,15 +83,9 @@ main {
   letter-spacing: 0.5px;
 }
 
-/* opcional: deja espacio arriba del contenido para que no quede tapado */
-main {
-  padding-top: 3rem;
-}
-
-
 /* ============================================================
    🔘 BOTONES GENERALES
-*/
+   ============================================================ */
 button {
   background-color: var(--color-secundario);
   color: var(--color-blanco);
@@ -113,8 +102,60 @@ button:hover {
 }
 
 /* ============================================================
+   🔹 BOTONERA INFERIOR AL HEADER
+   ============================================================ */
+.botonera {
+  position: fixed;
+  top: 3rem;
+  left: 0; /* 🔹 asegura que empiece desde el borde izquierdo */
+  width: 100%;
+  background-color: var(--color-blanco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem 0;
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.botonera__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  max-width: var(--ancho-max); /* 🔹 centra la botonera dentro del ancho máximo */
+}
+
+
+.botonera__btn {
+  background-color: var(--color-secundario);
+  border: none;
+  border-radius: 8px;
+  padding: 6px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform var(--transicion), background-color var(--transicion);
+}
+
+.botonera__btn:hover {
+  background-color: var(--color-primario);
+  transform: scale(1.05);
+}
+
+.botonera__btn img {
+  width: 24px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+/* ============================================================
    💠 UTILIDADES
-*/
+   ============================================================ */
 .text-center {
   text-align: center;
 }
