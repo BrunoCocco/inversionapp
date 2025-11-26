@@ -81,8 +81,7 @@ body {
   align-items: flex-start;
   gap: 1rem;
   padding: 1rem 0;
-  margin-top: 6.5rem; /* 🔹 espacio para header + botonera */
-  margin-bottom: 4rem; /* 🔹 espacio para el footer fijo */
+  margin-top: 6.5rem; /* 🔹 deja espacio para header + botonera */
 }
 
 /* ============================================================
@@ -108,7 +107,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   z-index: 1001;
 }
 
@@ -131,6 +129,75 @@ main {
 }
 
 /* ============================================================
+   💰 CARTERA DE INVERSIÓN – DOS BLOQUES LATERALES
+   ============================================================ */
+.cartera {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  width: 90%;
+  max-width: 900px;
+  margin: 8rem auto 6rem auto; /* espacio para header y footer */
+  padding: 2rem;
+}
+
+/* Panel principal */
+.cartera__panel {
+  flex: 1;
+  text-align: center;
+}
+
+.cartera__panel h1 {
+  color: var(--color-primario);
+  margin-bottom: 1rem;
+}
+
+.cartera__saldo {
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  color: var(--color-primario);
+  font-weight: 600;
+}
+
+.cartera__panel button {
+  margin: 0.4rem;
+}
+
+/* Bloque lateral */
+.cartera__historial {
+  flex: 1;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.cartera__historial h2 {
+  color: var(--color-primario);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.cartera__historial h3 {
+  color: var(--color-secundario);
+  font-size: 0.95rem;
+  margin: 0.4rem 0;
+}
+
+
+
+/* ============================================================
    🔘 BOTONES GENERALES
    ============================================================ */
 button {
@@ -138,10 +205,11 @@ button {
   color: var(--color-blanco);
   border: none;
   border-radius: 8px;
-  padding: 0.6rem 1.2rem;
+  padding: 0.7rem 1.5rem;
   cursor: pointer;
   transition: background-color var(--transicion);
   font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
 button:hover {
@@ -200,6 +268,28 @@ button:hover {
 }
 
 /* ============================================================
+   💠 UTILIDADES
+   ============================================================ */
+.text-center {
+  text-align: center;
+}
+
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rounded {
+  border-radius: 10px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ============================================================
    ⚓ FOOTER FIJO
    ============================================================ */
 .footer {
@@ -248,40 +338,4 @@ button:hover {
 
 .footer__contacto p {
   margin: 0;
-}
-
-/* ============================================================
-   💠 UTILIDADES
-   ============================================================ */
-.text-center {
-  text-align: center;
-}
-
-.shadow {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.rounded {
-  border-radius: 10px;
-}
-
-.container {
-  width: 100%;
-  max-width: var(--ancho-max);
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-/* ============================================================
-   📱 RESPONSIVE (footer centrado y ordenado)
-   ============================================================ */
-@media (max-width: 768px) {
-  .footer__content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer__links {
-    margin: 0.5rem 0;
-  }
 }
