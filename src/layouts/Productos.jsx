@@ -1,5 +1,6 @@
 import CardInversion from "../components/CardInversion";
 import {inversiones} from "../components/productos";
+
 function LayProductos() {
   return (
     <>
